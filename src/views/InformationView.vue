@@ -96,7 +96,7 @@ const apiKey = import.meta.env.VITE_GMAPS_KEY;
 </template>
 <style scoped>
 .information {
-  width: 500px;
+  width: 80%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -120,7 +120,6 @@ const apiKey = import.meta.env.VITE_GMAPS_KEY;
 }
 .timeline-component p {
   padding-left: 60px;
-
   font-family: "Cinzel";
 }
 .timeline .time {
@@ -158,7 +157,10 @@ h3 {
   gap: 3rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
+  .information {
+    width: 500px;
+  }
   .timeline-component p {
     white-space: nowrap;
   }

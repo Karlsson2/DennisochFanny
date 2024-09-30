@@ -258,6 +258,10 @@ h2 {
   gap: 1rem;
 }
 
+input,
+textarea {
+  font-size: 1.1rem;
+}
 .guest-form {
   margin: 0 auto;
   max-width: 500px;
@@ -311,6 +315,6 @@ p {
 }
 .information:hover {
   cursor: pointer;
-  color: #98c8ff;
+  color: #828b86;
 }
 </style>
