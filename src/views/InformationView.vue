@@ -68,43 +68,39 @@ const apiKey = import.meta.env.VITE_GMAPS_KEY;
           </CustomMarker>
         </GoogleMap>
       </div>
-      <div class="information-container-100 info-flex">
-        <div class="information-container-50">
-          <h3>Accomodation</h3>
-          <p>
-            If you’d like to extend the celebration and stay overnight at the
-            venue between Saturday and Sunday, we’re pleased to offer some
-            sleeping arrangement, there will be 27 sleeping spots in double beds
-            and additional arrangements can be made with air matresses for those
-            that are comfortable to sleep on them in the communal areas in the
-            accomodation halls.
-          </p>
-          <p>
-            Accomodation will be priced at
-            <span class="bold">370DKK per person,</span> please fill in this is
-            the RSVP if you wish to stay overnight.
-          </p>
-        </div>
-        <div class="information-container-50">
-          <h3>Children</h3>
-          <p>
-            Children are welcome at the ceremony but we kindly ask that you make
-            arrangements for them afterwards, children whom are too young to
-            have a babysitter is obviously exempt from this.
-          </p>
-        </div>
+      <div class="information-container-100">
+        <h3>Accomodation</h3>
+        <p>
+          If you’d like to extend the celebration and stay overnight at the
+          venue between Saturday and Sunday, we’re pleased to offer some
+          sleeping arrangement, there will be 27 sleeping spots in double beds
+          and additional arrangements can be made with air matresses for those
+          that are comfortable to sleep on them in the communal areas in the
+          accomodation halls.
+        </p>
+        <p>
+          Accomodation will be priced at
+          <span class="bold">370DKK per person,</span> please fill in this is
+          the RSVP if you wish to stay overnight.
+        </p>
+
+        <h3>Children</h3>
+        <p>
+          Children are welcome at the ceremony but we kindly ask that you make
+          arrangements for them afterwards, children whom are too young to have
+          a babysitter is obviously exempt from this.
+        </p>
       </div>
     </div>
   </div>
 </template>
 <style scoped>
 .information {
-  padding: 2rem;
+  width: 500px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 0px 120px;
   gap: 4rem;
 }
 .timeline {
@@ -123,8 +119,8 @@ const apiKey = import.meta.env.VITE_GMAPS_KEY;
   position: relative;
 }
 .timeline-component p {
-  padding-left: 40px;
-  white-space: nowrap;
+  padding-left: 60px;
+
   font-family: "Cinzel";
 }
 .timeline .time {
@@ -160,5 +156,14 @@ h3 {
 .info-flex {
   display: flex;
   gap: 3rem;
+}
+
+@media screen and (min-width: 600px) {
+  .timeline-component p {
+    white-space: nowrap;
+  }
+  .information-container-100 {
+    padding: 1rem;
+  }
 }
 </style>
