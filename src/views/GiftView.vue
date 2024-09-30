@@ -21,6 +21,15 @@ onMounted(() => {
 <template>
   <div class="page-container">
     <h2>WishList</h2>
+    <div class="gift-info">
+      <strong
+        >Your presence is the greatest gift of all, especially as we know many
+        of you will be traveling from afar.</strong
+      >
+      We truly don’t expect anything beyond your company! However, for those who
+      feel inclined to give, we’ve put together a list of group appropriate
+      gifts for some items we’d love.
+    </div>
     <div class="gifts">
       <a :href="gift.link" v-for="gift in gifts" :key="gift.id">
         <div class="gift">
@@ -59,7 +68,13 @@ h2 {
   max-width: 100%;
   border-radius: 8px;
 }
-
+.gift-info {
+  display: flex;
+  margin: 0 auto;
+  width: 500px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
 .gift .title {
   margin-top: 8px;
   font-size: 18px;
