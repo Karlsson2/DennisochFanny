@@ -4,7 +4,7 @@ import HomeView from "./views/HomeView.vue";
 import GiftView from "./views/GiftView.vue";
 import RegisterView from "./views/RegisterView.vue";
 import SuccessView from "./views/SuccessView.vue";
-import ErrorView from "./views/errorView.vue";
+//import ErrorView from "./views/errorView.vue";
 import InformationView from "./views/InformationView.vue";
 
 const routes = [
@@ -13,7 +13,7 @@ const routes = [
   { path: "/register", component: RegisterView },
   { path: "/information", component: InformationView },
   { path: "/success", component: SuccessView },
-  { path: "/404", component: ErrorView },
+  //{ path: "/404", component: ErrorView },
 ];
 
 const router = createRouter({
