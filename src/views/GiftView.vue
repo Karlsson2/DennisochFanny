@@ -32,19 +32,15 @@ function setType(type) {
 
 <template>
   <div class="page-container">
-    <h2>WishList</h2>
+    <h2>{{ $t("common.wishlist") }}</h2>
     <div class="gift-info">
-      Your presence means the world to us, especially knowing many of you will
-      be traveling from far and wide. We genuinely don’t expect anything more
-      than the pleasure of your company! However, for those who wish to give a
-      gift, we’ve created a list of gift ideas, including options for both group
-      contributions and individual gifts.
+      {{ $t("common.gift-info") }}
     </div>
     <!-- Filter buttons -->
     <div class="sort-by">
-      <button @click="setType('')">All</button>
-      <button @click="setType('GROUP')">Group</button>
-      <button @click="setType('SINGLE')">Single</button>
+      <button @click="setType('')">{{ $t("common.all") }}</button>
+      <button @click="setType('GROUP')">{{ $t("common.group") }}</button>
+      <button @click="setType('SINGLE')">{{ $t("common.single") }}</button>
     </div>
     <!-- Display filtered gifts -->
     <div class="gifts">

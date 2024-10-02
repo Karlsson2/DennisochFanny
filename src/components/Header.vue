@@ -1,8 +1,16 @@
 <script>
+import { useI18n } from "vue-i18n";
+
 export default {
   data() {
     return {
       isMenuOpen: false,
+      currentLocale: this.$i18n.locale, // Initialize with current locale
+      availableLocales: [
+        { code: "en", label: "🇬🇧 EN" },
+        { code: "sv", label: "🇸🇪 SV" },
+        { code: "dk", label: "🇩🇰 DK" },
+      ],
     };
   },
   methods: {
@@ -21,6 +29,10 @@ export default {
         document.body.style.overflow = "auto"; // Enable scrolling
       }
     },
+    changeLocale() {
+      this.$i18n.locale = this.currentLocale; // Update vue-i18n locale
+      localStorage.setItem("locale", this.currentLocale); // Persist selection
+    },
   },
   watch: {
     // Watch for route changes
@@ -29,13 +41,24 @@ export default {
       this.handleBodyScroll(false); // Reset scrolling when route changes
     },
   },
+  mounted() {
+    // Load saved locale from localStorage if available
+    const savedLocale = localStorage.getItem("locale");
+    if (
+      savedLocale &&
+      this.availableLocales.map((l) => l.code).includes(savedLocale)
+    ) {
+      this.currentLocale = savedLocale;
+      this.$i18n.locale = savedLocale;
+    }
+  },
 };
 </script>
 
 <template>
   <header>
     <div class="logo">
-      <RouterLink to="/">D & F</RouterLink>
+      <RouterLink to="/">D&F</RouterLink>
     </div>
     <button class="burger" @click="toggleMenu" aria-label="Toggle navigation">
       <span class="bar"></span>
@@ -44,13 +67,36 @@ export default {
     </button>
     <nav :class="{ active: isMenuOpen }">
       <div :class="{ active: isMenuOpen }" class="nav-title">
-        Dennis & Fann&#57368;
+        {{ $t("common.welcome-names") }}
       </div>
-      <RouterLink to="/information" @click="toggleMenu">Information</RouterLink>
-      <RouterLink to="/register" @click="toggleMenu">RSVP</RouterLink>
-      <RouterLink to="/gifts" @click="toggleMenu">Wishlist</RouterLink>
+      <RouterLink to="/information" @click="toggleMenu">{{
+        $t("common.information")
+      }}</RouterLink>
+      <RouterLink to="/register" @click="toggleMenu">{{
+        $t("common.rsvp")
+      }}</RouterLink>
+      <RouterLink to="/gifts" @click="toggleMenu">{{
+        $t("common.wishlist")
+      }}</RouterLink>
+
+      <!-- Language Selector -->
+      <label for="language-select" class="sr-only">Select Language</label>
+      <select
+        id="language-select"
+        v-model="currentLocale"
+        @change="changeLocale"
+      >
+        <option
+          v-for="locale in availableLocales"
+          :key="locale.code"
+          :value="locale.code"
+        >
+          {{ locale.label }}
+        </option>
+      </select>
+
       <div :class="{ active: isMenuOpen }" class="message">
-        Thank you for joining us!
+        {{ $t("common.thankYou") }}
       </div>
     </nav>
   </header>
@@ -101,6 +147,17 @@ nav a {
   cursor: pointer;
   z-index: 9999;
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 .bar {
   width: 25px;
@@ -109,10 +166,22 @@ nav a {
   margin: 3px 0; /* Spacing between bars */
   transition: 0.3s; /* Smooth transition */
 }
+select {
+  font-family: "Cinzel", serif;
+  background: none;
+  border: none;
+  font-size: 16px;
+  width: fit-content;
+}
+
+select:hover {
+  cursor: pointer;
+}
 
 /* Mobile and tablet styles */
 @media (max-width: 768px) {
   nav {
+    align-items: center;
     color: #fff;
     font-family: "Cinzel";
     opacity: 0; /* Hidden initially */

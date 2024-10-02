@@ -16,56 +16,48 @@ const apiKey = import.meta.env.VITE_MAPBOX_KEY;
         <div class="timeline">
           <div class="timeline-component">
             <div class="time">16.00</div>
-            <p>Ceremony</p>
+            <p>{{ $t("common.ceremony") }}</p>
           </div>
           <div class="timeline-component">
             <div class="time">16.30</div>
-            <p>Photos & Cocktails</p>
+            <p>{{ $t("common.photos-and-cocktails") }}</p>
           </div>
           <div class="timeline-component">
             <div class="time">18.00</div>
-            <p>Dinner</p>
+            <p>{{ $t("common.dinner") }}</p>
           </div>
           <div class="timeline-component">
             <div class="time">23.00</div>
-            <p>Dance floor opens</p>
+            <p>{{ $t("common.dance-floor") }}</p>
           </div>
           <div class="timeline-component">
             <div class="time">23.00+</div>
-            <p>Party</p>
+            <p>{{ $t("common.party") }}</p>
           </div>
         </div>
       </div>
       <div class="information-container-100">
-        <h3>Location</h3>
+        <h3>{{ $t("common.location") }}</h3>
         <MapBoxMap :access-token="apiKey" :center="[9.772262, 57.403853]" />
         <p>
-          The event will be held at
+          {{ $t("common.location-info") }}
+
           <a :href="mapLink">Lykkesholmgaard</a>, Lyngby Torp 84, 9480 Løkken
         </p>
       </div>
       <div class="information-container-100">
-        <h3>Accomodation</h3>
+        <h3>{{ $t("common.accomodation") }}</h3>
         <p>
-          If you’d like to extend the celebration and stay overnight at the
-          venue between Saturday and Sunday, we’re pleased to offer some
-          sleeping arrangement, there will be 27 sleeping spots in double beds
-          and additional arrangements can be made with air matresses for those
-          that are comfortable to sleep on them in the communal areas in the
-          accomodation halls.
+          {{ $t("common.accomodation-info") }}
         </p>
         <p>
-          Accomodation will be priced at
-          <span class="bold">370DKK per person,</span> please fill in this is
-          the RSVP if you wish to stay overnight.
+          {{ $t("common.accomodation-info2") }}
         </p>
       </div>
       <div class="information-container-100">
-        <h3>Children</h3>
+        <h3>{{ $t("common.children") }}</h3>
         <p>
-          Children are welcome at the ceremony but we kindly ask that you make
-          arrangements for them afterwards, children whom are too young to have
-          a babysitter is obviously exempt from this.
+          {{ $t("common.children-info") }}
         </p>
       </div>
     </div>
@@ -97,6 +89,7 @@ const apiKey = import.meta.env.VITE_MAPBOX_KEY;
 .timeline-component p {
   padding-left: 60px;
   font-family: "Cinzel";
+  text-align: left;
 }
 .timeline .time {
   position: absolute;

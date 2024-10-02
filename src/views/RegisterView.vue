@@ -1,20 +1,20 @@
 <template>
   <div class="page-container">
     <div class="guest-form">
-      <h2>Guest Form</h2>
+      <h2>{{ $t("common.guest-form") }}</h2>
       <form @submit.prevent="handleSubmit">
         <div class="input-div">
-          <label for="name">Name</label>
+          <label for="name">{{ $t("common.name") }}</label>
           <input
             type="text"
             id="name"
             v-model="guest.name"
-            placeholder="Firstname Lastname"
+            :placeholder="$t('common.name-placeholder')"
             required
           />
         </div>
         <div class="input-div">
-          <label for="name">Email</label>
+          <label for="name">{{ $t("common.email") }}</label>
           <input
             type="text"
             id="email"
@@ -24,7 +24,7 @@
           />
         </div>
         <div class="input-div">
-          <label>Attending</label>
+          <label>{{ $t("common.attending") }}</label>
           <div class="radio">
             <input
               type="radio"
@@ -33,37 +33,38 @@
               v-model="guest.attending"
               required
             />
-            <label class="yesno" for="attending-yes">Yes</label>
+            <label class="yesno" for="attending-yes">{{
+              $t("common.yes")
+            }}</label>
             <input
               type="radio"
               id="attending-no"
               value="false"
               v-model="guest.attending"
             />
-            <label class="yesno" for="attending-no">No</label>
+            <label class="yesno" for="attending-no">{{
+              $t("common.no")
+            }}</label>
           </div>
         </div>
 
         <div class="input-div">
-          <label for="allergies">Allergies </label>
+          <label for="allergies">{{ $t("common.allergies") }} </label>
           <textarea
             id="allergies"
             v-model="guest.allergies"
-            placeholder="I don't eat Meat"
+            :placeholder="$t('common.allergies-placeholder')"
           ></textarea>
         </div>
 
         <div class="input-div">
           <label>
-            Staying Over
+            {{ $t("common.staying-over") }}
             <div class="information">
               <font-awesome-icon
                 :icon="['fas', 'circle-info']"
                 @click="
-                  showPopup(
-                    'stayingOver',
-                    'If you’d like to extend the celebration and stay overnight at the venue, we’re pleased to offer a limited number of rooms on a first-come, first-served basis at the rate of 370DKK per person. We hope you’ll join us for a memorable night of festivities and comfort!'
-                  )
+                  showPopup('stayingOver', $t('common.staying-over-info'))
                 "
               />
             </div>
@@ -76,14 +77,16 @@
               v-model="guest.sleeping"
               required
             />
-            <label class="yesno" for="sleeping-yes">Yes</label>
+            <label class="yesno" for="sleeping-yes">{{
+              $t("common.yes")
+            }}</label>
             <input
               type="radio"
               id="sleeping"
               value="false"
               v-model="guest.sleeping"
             />
-            <label class="yesno" for="sleeping-no">No</label>
+            <label class="yesno" for="sleeping-no">{{ $t("common.no") }}</label>
           </div>
         </div>
 
@@ -93,10 +96,9 @@
           @update:visible="isPopupVisible = $event"
         />
         <div class="songs-container">
-          <div class="songs">What do you enjoy dancing to?</div>
+          <div class="songs">{{ $t("common.dancing") }}</div>
           <div class="information-box">
-            Submit a couple of songs and we will add them to the playlist for
-            the party!
+            {{ $t("common.dancing-info") }}
           </div>
         </div>
 
@@ -126,7 +128,7 @@
             placeholder="Baby Shark - Baby Shark"
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">{{ $t("common.submit") }}</button>
       </form>
     </div>
   </div>
@@ -192,7 +194,6 @@ const handleSubmit = async () => {
       song3: "",
     };
 
-    alert("Guest information submitted successfully!");
     router.push({
       path: "/success",
       query: { message: "Registration successful!" },

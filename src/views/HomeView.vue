@@ -4,10 +4,10 @@
   <div class="welcome-background">
     <div class="welcome-background-cover"></div>
     <div class="welcome-sign">
-      <div class="wedding-title">Welcome</div>
-      <div class="wedding-subtitle">to our Wedding</div>
-      <div class="wedding-names">Dennis and Fann&#57368;</div>
-      <div class="wedding-dates">August 9th, 2025</div>
+      <div class="wedding-title">{{ $t("common.welcome") }}</div>
+      <div class="wedding-subtitle">{{ $t("common.welcome-subtitle") }}</div>
+      <div class="wedding-names">{{ $t("common.welcome-names") }}</div>
+      <div class="wedding-dates">{{ $t("common.welcome-dates") }}</div>
     </div>
   </div>
 </template>
