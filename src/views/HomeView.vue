@@ -41,7 +41,7 @@
   position: relative;
 }
 .welcome-background-cover {
-  background: rgba(36, 36, 36, 0.3);
+  background: rgba(36, 36, 36, 0.35);
   height: 100%;
   width: 100%;
 }

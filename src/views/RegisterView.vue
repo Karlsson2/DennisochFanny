@@ -55,40 +55,6 @@
 
         <div class="input-div">
           <label>
-            Late Night Party
-            <div class="information">
-              <font-awesome-icon
-                :icon="['fas', 'circle-info']"
-                @click="
-                  showPopup(
-                    'lateNightParty',
-                    'We would love for you to join us for the after-party! From midnight onward, we’ll be offering resort-style wristbands for unlimited cocktails, so you can continue celebrating in style.'
-                  )
-                "
-              />
-            </div>
-          </label>
-          <div class="radio">
-            <input
-              type="radio"
-              id="late_night_party"
-              value="true"
-              v-model="guest.late_night_party"
-              required
-            />
-            <label class="yesno" for="late_night_party-yes">Yes</label>
-            <input
-              type="radio"
-              id="late_night_party-no"
-              value="false"
-              v-model="guest.late_night_party"
-            />
-            <label class="yesno" for="late_night_party-no">No</label>
-          </div>
-        </div>
-
-        <div class="input-div">
-          <label>
             Staying Over
             <div class="information">
               <font-awesome-icon
@@ -182,7 +148,6 @@ const guest = ref({
   email: "",
   attending: "true",
   allergies: "",
-  late_night_party: "false",
   sleeping: "false",
   song1: "",
   song2: "",
@@ -204,7 +169,6 @@ const handleSubmit = async () => {
       email: guest.value.email,
       attending: guest.value.attending,
       allergies: guest.value.allergies,
-      late_night_party: guest.value.late_night_party,
       sleeping: guest.value.sleeping,
       song1: guest.value.song1,
       song2: guest.value.song2,
@@ -222,7 +186,6 @@ const handleSubmit = async () => {
       email: "",
       attending: "true",
       allergies: "",
-      late_night_party: "false",
       sleeping: "false",
       song1: "",
       song2: "",
@@ -270,7 +233,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1rem;
+  padding: 1rem 1rem 3rem 1rem;
 }
 .songs-container {
   display: flex;

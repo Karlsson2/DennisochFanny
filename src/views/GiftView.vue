@@ -1,8 +1,9 @@
 <script setup>
-import { ref, onMounted } from "vue"; // Import ref and onMounted from Vue
+import { ref, onMounted, computed } from "vue";
 import { supabase } from "../services/supabase";
 
-const gifts = ref([]); // Initialize gifts as a reactive reference
+const gifts = ref([]);
+const selectedType = ref(""); // Holds the selected gift type (either "Group" or "Single")
 
 async function getGifts() {
   const { data, error } = await supabase.from("gifts").select();
@@ -10,28 +11,44 @@ async function getGifts() {
     console.error("Error fetching gifts:", error);
     return;
   }
-  gifts.value = data; // Set the data to the reactive gifts reference
+  gifts.value = data;
 }
 
-onMounted(() => {
-  getGifts(); // Fetch gifts when the component is mounted
+const filteredGifts = computed(() => {
+  if (!selectedType.value) {
+    return gifts.value;
+  }
+  return gifts.value.filter((gift) => gift.type === selectedType.value);
 });
+
+onMounted(() => {
+  getGifts();
+});
+
+function setType(type) {
+  selectedType.value = type;
+}
 </script>
 
 <template>
   <div class="page-container">
     <h2>WishList</h2>
     <div class="gift-info">
-      <strong
-        >Your presence is the greatest gift of all, especially as we know many
-        of you will be traveling from afar.</strong
-      >
-      We truly don’t expect anything beyond your company! However, for those who
-      feel inclined to give, we’ve put together a list of group appropriate
-      gifts for some items we’d love.
+      Your presence means the world to us, especially knowing many of you will
+      be traveling from far and wide. We genuinely don’t expect anything more
+      than the pleasure of your company! However, for those who wish to give a
+      gift, we’ve created a list of gift ideas, including options for both group
+      contributions and individual gifts.
     </div>
+    <!-- Filter buttons -->
+    <div class="sort-by">
+      <button @click="setType('')">All</button>
+      <button @click="setType('GROUP')">Group</button>
+      <button @click="setType('SINGLE')">Single</button>
+    </div>
+    <!-- Display filtered gifts -->
     <div class="gifts">
-      <a :href="gift.link" v-for="gift in gifts" :key="gift.id">
+      <a :href="gift.link" v-for="gift in filteredGifts" :key="gift.id">
         <div class="gift">
           <img :src="gift.image_url" alt="" />
           <div class="title">{{ gift.name }}</div>
@@ -40,12 +57,11 @@ onMounted(() => {
     </div>
   </div>
 </template>
-
 <style scoped>
 .gifts {
   display: flex;
   margin: 0 auto;
-  width: 500px;
+  max-width: 80%;
   flex-wrap: wrap;
 }
 h2 {
@@ -71,7 +87,8 @@ h2 {
 .gift-info {
   display: flex;
   margin: 0 auto;
-  width: 500px;
+  justify-content: center;
+  width: 80%;
   flex-wrap: wrap;
   margin-bottom: 2rem;
 }
@@ -83,5 +100,37 @@ h2 {
 
 .gift:hover {
   transform: scale(1.01);
+}
+
+/* Button styling */
+.sort-by {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.sort-by button {
+  margin: 0 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #b3bfb8;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.sort-by button:hover {
+  background-color: #828b86;
+}
+
+@media screen and (min-width: 768px) {
+  .gifts {
+    width: 500px;
+  }
+  .gift-info {
+    width: 500px;
+  }
 }
 </style>

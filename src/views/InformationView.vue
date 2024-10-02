@@ -1,9 +1,10 @@
 <script setup>
 import { GoogleMap, CustomMarker } from "vue3-google-map";
+import MapBoxMap from "../components/MapBoxMap.vue";
 
 const center = { lat: 57.40381284095866, lng: 9.771508127390755 };
 
-const apiKey = import.meta.env.VITE_GMAPS_KEY;
+const apiKey = import.meta.env.VITE_MAPBOX_KEY;
 </script>
 
 <template>
@@ -11,7 +12,7 @@ const apiKey = import.meta.env.VITE_GMAPS_KEY;
     <h2>Information</h2>
     <div class="information">
       <div class="information-container-100">
-        <h3>Timeline</h3>
+        <h3 style="margin-bottom: 54px">Timeline</h3>
         <div class="timeline">
           <div class="timeline-component">
             <div class="time">16.00</div>
@@ -37,36 +38,11 @@ const apiKey = import.meta.env.VITE_GMAPS_KEY;
       </div>
       <div class="information-container-100">
         <h3>Location</h3>
+        <MapBoxMap :access-token="apiKey" :center="[9.772262, 57.403853]" />
         <p>
           The event will be held at
-          <a
-            href="https://www.google.com/maps?ll=57.403853,9.772262&z=15&t=m&hl=en-GB&gl=US&mapclient=apiv3&cid=4939820437180124204"
-            >Lykkesholmgaard</a
-          >, Lyngby Torp 84, 9480 Løkken
+          <a :href="mapLink">Lykkesholmgaard</a>, Lyngby Torp 84, 9480 Løkken
         </p>
-        <GoogleMap
-          :api-key="apiKey"
-          style="width: 100%; height: 400px"
-          :center="center"
-          :zoom="15"
-        >
-          <CustomMarker
-            :options="{ position: center, anchorPoint: 'BOTTOM_CENTER' }"
-          >
-            <a
-              href="https://www.google.com/maps?ll=57.403853,9.772262&z=15&t=m&hl=en-GB&gl=US&mapclient=apiv3&cid=4939820437180124204"
-            >
-              <div style="text-align: center">
-                <img
-                  src="../assets/images/weddingpin.png"
-                  width="50"
-                  height="50"
-                  style="margin-top: 8px"
-                />
-              </div>
-            </a>
-          </CustomMarker>
-        </GoogleMap>
       </div>
       <div class="information-container-100">
         <h3>Accomodation</h3>
@@ -83,7 +59,8 @@ const apiKey = import.meta.env.VITE_GMAPS_KEY;
           <span class="bold">370DKK per person,</span> please fill in this is
           the RSVP if you wish to stay overnight.
         </p>
-
+      </div>
+      <div class="information-container-100">
         <h3>Children</h3>
         <p>
           Children are welcome at the ceremony but we kindly ask that you make
@@ -98,10 +75,9 @@ const apiKey = import.meta.env.VITE_GMAPS_KEY;
 .information {
   width: 80%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin: 0 auto;
-  gap: 4rem;
+  gap: 1rem;
 }
 .timeline {
   border-left: 1px solid #fff;
@@ -157,15 +133,25 @@ h3 {
   gap: 3rem;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 768px) {
   .information {
-    width: 500px;
+    width: unset;
+    max-width: 80%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .information-container-100 {
+    width: calc(50% - 40px);
+    padding: 10px;
   }
   .timeline-component p {
     white-space: nowrap;
   }
   .information-container-100 {
     padding: 1rem;
+  }
+  .timeline {
+    margin: 18px auto;
   }
 }
 </style>
