@@ -39,5 +39,13 @@
   "staying-over-info": "Hvis I ønsker at forlænge fejringen og overnatte på stedet, tilbyder vi et begrænset antal værelser efter først-til-mølle-princippet til en pris på 370DKK per person. Vi håber, I vil være med til en mindeværdig aften fyldt med festligheder og komfort!",
   "dancing": "Hvad kan du lide at danse til?",
   "dancing-info": "Indsend et par sange, så tilføjer vi dem til playlisten til festen!",
-  "submit": "Indsend"
+  "submit": "Indsend",
+  "internationalTravel": "Rejser fra udlandet",
+  "travelInformationHeader": "Rejseinformation",
+  "travelInformationContent": "Hvis du rejser fra udlandet, anbefaler vi, at du flyver til Aalborg Lufthavn (AAL). lufthavnen er cirka 1,5 timers kørsel fra stedet.",
+  "travelInformationContent2": "Hvis du ankommer om fredagen, organiserer vi afhentning fra lufthavnen. Venligst giv os dine flyoplysninger.",
+  "travelInfoAirport": "Rejse med fly",
+  "travelInfoFerry": "Rejse med færge",
+  "travelInformationContent3": "Hvis du rejser fra Sverige, anbefaler vi, at du tager færgen mellem Göteborg og Frederikshavn. Det er en kort køretur på omkring en time fra Frederikshavn til stedet.",
+  "accomodationInformation": "Hvis du ankommer om fredagen, har vi 7 værelser til rådighed på stedet. Venligst giv os besked, hvis du ønsker at reservere et af disse værelser. Prisen er 370 DKK per nat. Ellers er der masser af hoteller i den nærliggende by Lygnby eller Løkken."
 }

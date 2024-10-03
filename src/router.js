@@ -6,6 +6,7 @@ import RegisterView from "./views/RegisterView.vue";
 import SuccessView from "./views/SuccessView.vue";
 //import ErrorView from "./views/errorView.vue";
 import InformationView from "./views/InformationView.vue";
+import InternationalTravelView from "./views/InternationalTravelView.vue";
 
 const routes = [
   { path: "/", component: HomeView },
@@ -13,6 +14,8 @@ const routes = [
   { path: "/register", component: RegisterView },
   { path: "/information", component: InformationView },
   { path: "/success", component: SuccessView },
+  { path: "/:pathMatch(.*)*", redirect: "/" },
+  { path: "/international-travel", component: InternationalTravelView },
   //{ path: "/404", component: ErrorView },
 ];
 

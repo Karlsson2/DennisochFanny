@@ -11,12 +11,14 @@ export default {
         { code: "sv", label: "🇸🇪 SV" },
         { code: "dk", label: "🇩🇰 DK" },
       ],
+      isActive: false, // Control animation state
     };
   },
   methods: {
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
       this.handleBodyScroll(this.isMenuOpen);
+      this.isActive = !this.isActive; // Toggle the animation state on click
     },
     closeMenu() {
       this.isMenuOpen = false;
@@ -60,17 +62,22 @@ export default {
     <div class="logo">
       <RouterLink to="/">D&F</RouterLink>
     </div>
+
     <button class="burger" @click="toggleMenu" aria-label="Toggle navigation">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+      <div :class="['bar', 'top', { 'is-active': isActive }]"></div>
+      <div :class="['bar', 'middle', { 'is-active': isActive }]"></div>
+      <div :class="['bar', 'bottom', { 'is-active': isActive }]"></div>
     </button>
+
     <nav :class="{ active: isMenuOpen }">
       <div :class="{ active: isMenuOpen }" class="nav-title">
         {{ $t("common.welcome-names") }}
       </div>
       <RouterLink to="/information" @click="toggleMenu">{{
         $t("common.information")
+      }}</RouterLink>
+      <RouterLink to="/international-travel" @click="toggleMenu">{{
+        $t("common.internationalTravel")
       }}</RouterLink>
       <RouterLink to="/register" @click="toggleMenu">{{
         $t("common.rsvp")
@@ -115,7 +122,7 @@ header {
   margin-bottom: 40px;
 }
 .logo a {
-  font-family: "Cinzel", serif;
+  font-family: "southern", serif;
 }
 .nav-title {
   display: none;
@@ -160,8 +167,8 @@ nav a {
 }
 
 .bar {
-  width: 25px;
-  height: 3px;
+  width: 30px;
+  height: 1px;
   background: #fff;
   margin: 3px 0; /* Spacing between bars */
   transition: 0.3s; /* Smooth transition */
@@ -176,6 +183,88 @@ select {
 
 select:hover {
   cursor: pointer;
+}
+
+/* Opening Animations */
+.is-active.top {
+  animation: topbar-open 0.5s forwards;
+}
+
+.is-active.middle {
+  animation: middlebar-open 0.5s forwards;
+}
+
+.is-active.bottom {
+  animation: bottombar-open 0.5s forwards;
+}
+
+/* Closing Animations */
+.top {
+  animation: topbar-close 0.5s forwards;
+}
+
+.middle {
+  animation: middlebar-close 0.5s forwards;
+}
+
+.bottom {
+  animation: bottombar-close 0.5s forwards;
+}
+
+/* Keyframes for opening the hamburger menu */
+@keyframes topbar-open {
+  from {
+    transform: translateY(0) rotate(0);
+  }
+  to {
+    transform: translateY(6px) rotate(45deg);
+  }
+}
+
+@keyframes middlebar-open {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes bottombar-open {
+  from {
+    transform: translateY(0) rotate(0);
+  }
+  to {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
+/* Keyframes for closing the hamburger menu */
+@keyframes topbar-close {
+  from {
+    transform: translateY(6px) rotate(45deg);
+  }
+  to {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes middlebar-close {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bottombar-close {
+  from {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+  to {
+    transform: translateY(0) rotate(0);
+  }
 }
 
 /* Mobile and tablet styles */

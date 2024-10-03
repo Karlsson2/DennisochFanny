@@ -13,7 +13,7 @@
   "ceremony": "Ceremony",
   "photos-and-cocktails": "Photos & Cocktails",
   "dinner": "Dinner",
-  "dancefloor": "Dance floor opens",
+  "dance-floor": "Dance floor opens",
   "party": "Party",
   "location": "Location",
   "location-info": "The event will be held at",
@@ -39,5 +39,13 @@
   "staying-over-info": "If youd like to extend the celebration and stay overnight at the venue, were pleased to offer a limited number of rooms on a first-come, first-served basis at the rate of 370DKK per person. We hope youll join us for a memorable night of festivities and comfort!",
   "dancing": "What do you enjoy dancing to?",
   "dancing-info": "Submit a couple of songs and we will add them to the playlist for the party!",
-  "submit": "Submit"
+  "submit": "Submit",
+  "internationalTravel": "Travelling from abroad",
+  "travelInformationHeader": "Travel Information",
+  "travelInformationContent": "If you are traveling from abroad, we recommend flying to Aalborg Airport (AAL). The airport is approximately 1.5 hours away from the venue by car.",
+  "travelInformationContent2": "If you are arriving on the Friday we will organise pickups from the airport. Please let us know your flight details.",
+  "travelInfoAirport": "Travel by air",
+  "travelInfoFerry": "Travel by Ferry",
+  "travelInformationContent3": "If you are travelling from sweden we recommend that you take the Ferry between Gothenburg and Fredrikshavn, its a short drive of about an hour to the venue from Fredrikshavn.",
+  "accomodationInformation": "If you are arriving on the Friday we have 7 rooms available at the venue. Please let us know if you would like to reserve one of these rooms. Its priced at 370DKK per night. Otherwise there are plenty of hotels available in the nearby town of Lyngby or Løkken."
 }

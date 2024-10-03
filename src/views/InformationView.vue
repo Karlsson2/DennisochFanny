@@ -3,7 +3,8 @@ import { GoogleMap, CustomMarker } from "vue3-google-map";
 import MapBoxMap from "../components/MapBoxMap.vue";
 
 const center = { lat: 57.40381284095866, lng: 9.771508127390755 };
-
+const mapLink =
+  "https://www.google.com/maps/place/Lykkesholmgaard,+Lyngby+Torp+84,+9480+L%C3%B8kken,+Denmark/@57.403853,9.772262,15z/data=!4m6!3m5!1s0x4648db46b4d6966b:0x448dc483ec560c2c!8m2!3d57.403784!4d9.7715329!16s%2Fg%2F11f3bl38fb?hl=en-GB&gl=US";
 const apiKey = import.meta.env.VITE_MAPBOX_KEY;
 </script>
 
