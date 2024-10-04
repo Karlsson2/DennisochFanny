@@ -6,6 +6,7 @@
   "wishlist": "Önskelista",
   "thankYou": "Tack för att ni var med och firade vår dag!",
   "gift-info": "Er närvaro betyder allt för oss, särskilt då vi vet att många av er kommer att resa långt för att vara här. Vi förväntar oss inget mer än ert sällskap! För dem som önskar att ge en present har vi skapat en lista med presentidéer, både för individuella och gruppgåvor.",
+  "gift-info2": "Om du vill ge någon av gåvorna nedan, klicka helt enkelt på knappen 'Ge denna gåva'. Ange sedan din e-postadress och hur många gåvor du vill ge. För vissa saker, som tallrikarna, har vi önskat flera av samma slag, så känn dig fri att välja så många du vill bidra med. Detta för att undvika att gåvorna dupliceras.",
   "all": "Alla",
   "single": "Individuell",
   "group": "Grupp",
@@ -47,5 +48,13 @@
   "travelInfoAirport": "Resa med flyg",
   "travelInfoFerry": "Resa med färja",
   "travelInformationContent3": "Om du reser från Sverige rekommenderar vi att du tar färjan mellan Göteborg och Fredrikshavn. Det är en kort bilresa på ungefär en timme från Fredrikshavn till platsen.",
-  "accomodationInformation": "Om du anländer på fredagen har vi 7 rum tillgängliga på platsen. Vänligen meddela oss om du vill boka ett av dessa rum. Priset är 370 DKK per natt. Annars finns det gott om hotell i närliggande staden Lygnby eller Løkken."
+  "accomodationInformation": "Om du anländer på fredagen har vi 7 rum tillgängliga på platsen. Vänligen meddela oss om du vill boka ett av dessa rum. Priset är 370 DKK per natt. Annars finns det gott om hotell i närliggande staden Lygnby eller Løkken.",
+  "amount": "Önskat antal",
+  "claim": "Ge denna gåva",
+  "claimed": " tingade",
+  "claimGift": "Ge denna gåva",
+  "fullyClaimed": "Given av en annan gäst/er",
+  "wishedFor": "önskas",
+  "yourEmail": "Din e-post",
+  "giftingAmount": "Hur många vill du ge?"
 }

@@ -63,9 +63,7 @@
             <div class="information">
               <font-awesome-icon
                 :icon="['fas', 'circle-info']"
-                @click="
-                  showPopup('stayingOver', $t('common.staying-over-info'))
-                "
+                @click="showPopup()"
               />
             </div>
           </label>
@@ -89,12 +87,16 @@
             <label class="yesno" for="sleeping-no">{{ $t("common.no") }}</label>
           </div>
         </div>
-
         <Popup
-          :message="popupMessage"
           :visible="isPopupVisible"
           @update:visible="isPopupVisible = $event"
-        />
+        >
+          <div class="">
+            <h3>{{ $t("common.staying-over") }}</h3>
+            <p>{{ $t("common.staying-over-info") }}</p>
+          </div>
+        </Popup>
+
         <div class="songs-container">
           <div class="songs">{{ $t("common.dancing") }}</div>
           <div class="information-box">
@@ -159,8 +161,7 @@ const guest = ref({
 const isPopupVisible = ref(false);
 const popupMessage = ref("");
 
-const showPopup = (type, message) => {
-  popupMessage.value = message;
+const showPopup = () => {
   isPopupVisible.value = true;
 };
 

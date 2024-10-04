@@ -5,7 +5,8 @@
   "rsvp": "RSVP",
   "wishlist": "Wishlist",
   "thankYou": "Thank you for joining us!",
-  "gift-info": "Your presence means the world to us, especially knowing many of you will be traveling from far and wide. We genuinely dont expect anything more than the pleasure of your company! However, for those who wish to give a gift, weve created a list of gift ideas, including options for both group and individual gifts.",
+  "gift-info": "Your presence means the world to us, especially knowing many of you will be traveling from far and wide. We genuinely dont expect anything more than the pleasure of your company! However, for those who wish to give a gift, we've created a list of gift ideas, including options for both group and individual gifts.",
+  "gift-info2": "If you'd like to gift any of the items below, simply click the 'Gift this Item' button. From there, enter your email and specify the number of gifts you'd like to give. For certain items, like the plates, we've requested multiple of the same kind, so feel free to choose as many as you'd like to contribute.",
   "all": "All",
   "single": "Individual",
   "group": "Group",
@@ -47,5 +48,13 @@
   "travelInfoAirport": "Travel by air",
   "travelInfoFerry": "Travel by Ferry",
   "travelInformationContent3": "If you are travelling from sweden we recommend that you take the Ferry between Gothenburg and Fredrikshavn, its a short drive of about an hour to the venue from Fredrikshavn.",
-  "accomodationInformation": "If you are arriving on the Friday we have 7 rooms available at the venue. Please let us know if you would like to reserve one of these rooms. Its priced at 370DKK per night. Otherwise there are plenty of hotels available in the nearby town of Lyngby or Løkken."
+  "accomodationInformation": "If you are arriving on the Friday we have 7 rooms available at the venue. Please let us know if you would like to reserve one of these rooms. Its priced at 370DKK per night. Otherwise there are plenty of hotels available in the nearby town of Lyngby or Løkken.",
+  "amount": "Desired amount",
+  "claim": "Gift this Item",
+  "claimed": "pcs Gifted",
+  "claimGift": "Gift this Item",
+  "fullyClaimed": "Claimed by Another Guest/s",
+  "yourEmail": "Your Email",
+  "giftingAmount": "How many would you like to gift?",
+  "wishedFor": "desired"
 }
