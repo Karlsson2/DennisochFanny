@@ -2,6 +2,11 @@
 import { ref, onMounted, computed, reactive } from "vue";
 import { supabase } from "../services/supabase";
 import Popup from "../components/Popup.vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faLink);
 
 // Reactive references for gifts and selected type
 const gifts = ref([]);
@@ -243,18 +248,21 @@ function closeMessagePopup() {
     <!-- Display filtered gifts -->
     <div class="gifts">
       <div v-for="gift in filteredGifts" :key="gift.id" class="gift">
-        <img :src="gift.image_url" alt="Gift Image" />
-        <div class="amount">
-          {{ gift.claimed_amount }} / {{ gift.amount }}
-          {{ $t("common.claimed") }}
-        </div>
+        <a :href="gift.link" target="_blank" rel="noopener noreferrer">
+          <img :src="gift.image_url" alt="Gift Image" />
+          <div class="amount">
+            {{ gift.claimed_amount }} / {{ gift.amount }}
+            {{ $t("common.claimed") }}
+          </div>
+        </a>
         <div class="gift-body">
-          <div class="title">{{ gift.name }}</div>
-          <div class="wished-for">
-            {{ gift.amount }} {{ $t("common.wishedFor") }}
+          <div class="gift-text">
+            <div class="title">{{ gift.name }}</div>
+            <div class="wished-for">
+              {{ gift.amount }} {{ $t("common.wishedFor") }}
+            </div>
           </div>
 
-          <!-- Claim button to open the popup -->
           <button
             class="claim-button"
             @click="openClaimPopup(gift.id)"
@@ -328,7 +336,7 @@ h2 {
 }
 
 .gift {
-  width: 50%;
+  width: 100%;
   padding: 16px;
   border-radius: 8px;
   text-align: center;
@@ -341,15 +349,23 @@ h2 {
 .gift-body {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 0.5rem;
   border-radius: 0px 0px 8px 8px;
-  background: #2b2a2a;
+  background: #3c3c3c;
   padding: 0.5rem;
+  min-height: 150px;
 }
-
-.gift img {
-  max-width: 100%;
+.gift a {
+  position: relative;
+  background: #3c3c3c;
   border-radius: 8px 8px 0px 0px;
+}
+.gift img {
+  width: 100%;
+  border-radius: 8px 8px 0px 0px;
+  max-height: 200px;
+  object-fit: cover;
 }
 .gift-info {
   display: flex;
@@ -371,7 +387,8 @@ h2 {
   color: #f3f3f3;
   border-radius: 8px;
   position: absolute;
-  right: 20px;
+  right: 5px;
+  top: 0;
   padding: 0.5rem;
   background: #555;
 }
@@ -391,6 +408,9 @@ h2 {
 .claim-form input {
   margin-top: 0px !important;
 }
+.wished-for {
+  color: #808080;
+}
 .claim-button {
   width: 100%;
   padding: 8px 16px;
@@ -405,6 +425,7 @@ h2 {
 .claim-button:disabled {
   background-color: #727272;
   cursor: not-allowed;
+  color: #a7a7a7;
 }
 .claim-submit {
   margin-top: 16px;
@@ -441,6 +462,9 @@ input[type="number"] {
 }
 
 @media screen and (min-width: 768px) {
+  .gift {
+    width: 50%;
+  }
   .gifts {
     width: 500px;
   }

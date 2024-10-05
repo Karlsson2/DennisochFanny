@@ -13,21 +13,11 @@
 </template>
 
 <style scoped>
-.plus {
-  font-family: "Cinzel";
-}
-.register-button {
-  padding: 8px 16px;
-  background-color: #b3bfb8;
-  border-radius: 10px;
-  cursor: pointer;
-  width: fit-content;
-  border: 1px solid white;
-}
 .welcome-sign {
   position: absolute;
-  top: 15%;
-  left: 4rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,6 +52,59 @@
 }
 .wedding-names {
   font-family: "southern";
-  font-size: 5rem;
+  font-size: 4rem;
+}
+@media screen and (max-width: 375px) {
+  .wedding-title {
+    font-size: 4rem;
+  }
+  .wedding-names {
+    font-size: 2rem;
+  }
+  .wedding-subtitle {
+    font-family: "Cinzel", serif;
+    font-size: 0.75rem;
+    margin-top: -40px;
+  }
+  .wedding-dates {
+    font-family: "Cinzel", serif;
+    font-size: 0.75rem;
+    margin-top: -5px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .welcome-sign {
+    position: absolute;
+    top: 15%;
+    left: 4rem;
+    transform: translate(0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .welcome-background {
+    position: relative;
+  }
+  .welcome-background-cover {
+    background: rgba(36, 36, 36, 0.35);
+    height: 100%;
+    width: 100%;
+  }
+  .wedding-title {
+    font-size: 6rem;
+  }
+  .wedding-subtitle {
+    font-size: 1rem;
+    margin-top: -56px;
+    margin-left: 92px;
+  }
+  .wedding-dates {
+    font-size: 1rem;
+    margin-top: -40px;
+  }
+  .wedding-names {
+    font-size: 5rem;
+  }
 }
 </style>
