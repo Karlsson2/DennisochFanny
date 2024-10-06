@@ -56,5 +56,6 @@
   "fullyClaimed": "Givet af en anden gæst/er",
   "wishedFor": "ønsket",
   "yourEmail": "Din e-mail",
-  "giftingAmount": "Hvor mange vil du give?"
+  "giftingAmount": "Hvor mange vil du give?",
+  "cantBeFound": "Den side kan ikke findes!"
 }

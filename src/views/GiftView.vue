@@ -254,6 +254,11 @@ function closeMessagePopup() {
             {{ gift.claimed_amount }} / {{ gift.amount }}
             {{ $t("common.claimed") }}
           </div>
+          <div class="type">
+            {{
+              gift.type === "GROUP" ? $t("common.group") : $t("common.single")
+            }}
+          </div>
         </a>
         <div class="gift-body">
           <div class="gift-text">
@@ -391,6 +396,17 @@ h2 {
   top: 0;
   padding: 0.5rem;
   background: #555;
+}
+.gift .type {
+  margin-top: 4px;
+  font-size: 16px;
+  color: #f3f3f3;
+  border-radius: 8px;
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+  padding: 0.5rem;
+  background: #b3bfb8;
 }
 .claim-form {
   display: flex;

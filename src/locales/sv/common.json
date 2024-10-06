@@ -56,5 +56,6 @@
   "fullyClaimed": "Given av en annan gäst/er",
   "wishedFor": "önskas",
   "yourEmail": "Din e-post",
-  "giftingAmount": "Hur många vill du ge?"
+  "giftingAmount": "Hur många vill du ge?",
+  "cantBeFound": "Sidan kan inte hittas!"
 }

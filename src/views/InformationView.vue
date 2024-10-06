@@ -126,6 +126,14 @@ h3 {
   display: flex;
   gap: 3rem;
 }
+@media screen and (max-width: 320px) {
+  .timeline-component p {
+    padding-left: 40px;
+  }
+  .timeline .time {
+    left: -80px;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .information {
@@ -135,7 +143,7 @@ h3 {
     flex-wrap: wrap;
   }
   .information-container-100 {
-    width: calc(50% - 40px);
+    width: calc(50% - 1rem);
     padding: 10px;
   }
   .timeline-component p {
@@ -146,6 +154,15 @@ h3 {
   }
   .timeline {
     margin: 18px auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .timeline-component p {
+    white-space: wrap;
+  }
+  .information {
+    max-width: 90%;
   }
 }
 </style>

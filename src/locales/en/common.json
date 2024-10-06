@@ -56,5 +56,6 @@
   "fullyClaimed": "Claimed by Another Guest/s",
   "yourEmail": "Your Email",
   "giftingAmount": "How many would you like to gift?",
-  "wishedFor": "desired"
+  "wishedFor": "desired",
+  "cantBeFound": "That page can't be found!"
 }
