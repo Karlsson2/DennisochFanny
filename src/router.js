@@ -3,7 +3,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import HomeView from "./views/HomeView.vue";
 import GiftView from "./views/GiftView.vue";
 import RegisterView from "./views/RegisterView.vue";
-import ErrorView from "./views/errorView.vue";
+import ErrorView from "./views/ErrorView.vue";
 import InformationView from "./views/InformationView.vue";
 import InternationalTravelView from "./views/InternationalTravelView.vue";
 
