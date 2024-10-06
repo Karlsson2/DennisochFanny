@@ -99,7 +99,7 @@ export default {
           :value="locale.code"
         >
           <img
-            :src="`/assets/images/${locale.code}.jpg`"
+            :src="`../assets/images/${locale.code}.jpg`"
             :alt="locale.label"
             class="flag-icon"
           />
