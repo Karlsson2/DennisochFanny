@@ -9,6 +9,9 @@
 <script>
 import mapboxgl from "mapbox-gl";
 
+// Importing the image
+import weddingPin from "../assets/images/weddingpin.png";
+
 export default {
   name: "MapBoxMap",
   props: {
@@ -47,7 +50,7 @@ export default {
     markerElement.className = "custom-marker";
     markerElement.innerHTML = `
         <a href="${this.mapLink}">
-          <img src="/src/assets/images/weddingpin.png" width="60" height="60" style="margin-top: 8px" />
+          <img src="${weddingPin}" width="60" height="60" style="margin-top: 8px" />
         </a>
       `;
 
