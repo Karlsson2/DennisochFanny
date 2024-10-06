@@ -75,9 +75,7 @@
 @media screen and (min-width: 769px) {
   .welcome-sign {
     position: absolute;
-    top: 15%;
-    left: 4rem;
-    transform: translate(0, 0);
+
     display: flex;
     flex-direction: column;
     align-items: center;
