@@ -25,6 +25,8 @@
 }
 .welcome-background {
   height: -webkit-fill-available;
+  height: fill-available; /* For Firefox */
+  height: 100%; /* Fallback for other browsers */
   background-image: url("../assets/images/trolltunga2.jpg");
   background-size: cover;
   background-position: top left;

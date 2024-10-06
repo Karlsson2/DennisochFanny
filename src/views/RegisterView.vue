@@ -256,6 +256,8 @@ input[type="text"],
 textarea {
   padding: 0.5em;
   width: -webkit-fill-available;
+  width: fill-available; /* For Firefox */
+  width: 100%; /* Fallback for other browsers */
 }
 
 button {

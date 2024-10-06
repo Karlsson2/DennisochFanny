@@ -98,6 +98,11 @@ export default {
           :key="locale.code"
           :value="locale.code"
         >
+          <img
+            :src="`/assets/images/${locale.code}.jpg`"
+            :alt="locale.label"
+            class="flag-icon"
+          />
           {{ locale.label }}
         </option>
       </select>
@@ -183,6 +188,11 @@ select {
 
 select:hover {
   cursor: pointer;
+}
+.flag-icon {
+  width: 20px;
+  height: auto;
+  margin-right: 5px;
 }
 
 /* Opening Animations */

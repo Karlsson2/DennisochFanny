@@ -27,6 +27,8 @@ body {
 }
 main {
   height: -webkit-fill-available;
+  height: fill-available; /* For Firefox */
+  height: 100%; /* Fallback for other browsers */
   position: relative;
 }
 @font-face {
