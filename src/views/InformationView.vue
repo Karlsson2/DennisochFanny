@@ -16,11 +16,11 @@ const apiKey = import.meta.env.VITE_MAPBOX_KEY;
         <h3 style="margin-bottom: 54px">Timeline</h3>
         <div class="timeline">
           <div class="timeline-component">
-            <div class="time">16.00</div>
+            <div class="time">15.00</div>
             <p>{{ $t("common.ceremony") }}</p>
           </div>
           <div class="timeline-component">
-            <div class="time">16.30</div>
+            <div class="time">15.30</div>
             <p>{{ $t("common.photos-and-cocktails") }}</p>
           </div>
           <div class="timeline-component">
@@ -28,11 +28,11 @@ const apiKey = import.meta.env.VITE_MAPBOX_KEY;
             <p>{{ $t("common.dinner") }}</p>
           </div>
           <div class="timeline-component">
-            <div class="time">23.00</div>
+            <div class="time">22.30</div>
             <p>{{ $t("common.dance-floor") }}</p>
           </div>
           <div class="timeline-component">
-            <div class="time">23.00+</div>
+            <div class="time">22.30+</div>
             <p>{{ $t("common.party") }}</p>
           </div>
         </div>

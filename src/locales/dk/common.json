@@ -12,7 +12,7 @@
   "group": "Gruppe",
   "timeline": "Tidslinje",
   "ceremony": "Ceremoni",
-  "photos-and-cocktails": "Billeder & Cocktails",
+  "photos-and-cocktails": "Drikke & Canapés",
   "dinner": "Middag",
   "dance-floor": "Dansegulvet åbner",
   "party": "Fest",
@@ -21,6 +21,11 @@
   "accomodation": "Overnatning",
   "accomodation-info": "Hvis I ønsker at forlænge fejringen og overnatte på stedet fra lørdag til søndag, er vi glade for at kunne tilbyde nogle sovepladser. Der vil være 27 sovepladser i dobbeltsenge, og der kan arrangeres ekstra sovepladser med luftmadrasser til dem, der er komfortable med at sove i fællesområderne.",
   "accomodation-info2": "Overnatning vil koste 370DKK per person. Udfyld venligst dette i RSVP, hvis I ønsker at overnatte.",
+  "accomodation-info3": "Morgenmad kan tilkøbes for 130DKK per person. Udfyld venligst dette i RSVP, hvis I ønsker at tilkøbe morgenmad.",
+  "friday-sunday": "Fre - Søn",
+  "saturday-sunday": "Lør - Søn",
+  "breakfast": "Morgenmad",
+  "breakfast-info": "Morgenmad kan tilkøbes for 130DKK per person.",
   "children": "Børn",
   "children-info": "Børn er velkomne til ceremonien, men vi beder venligst om, at I arrangerer pasning til dem efterfølgende. Børn, der er for små til at have en babysitter, er naturligvis undtaget.",
   "welcome": "Velkommen",
@@ -57,5 +62,8 @@
   "wishedFor": "ønsket",
   "yourEmail": "Din e-mail",
   "giftingAmount": "Hvor mange vil du give?",
-  "cantBeFound": "Den side kan ikke findes!"
+  "cantBeFound": "Den side kan ikke findes!",
+  "success-title": "Registreringen lykkedes!",
+  "success-message": "Tak for din registrering. Vi glæder os til at se dig!",
+  "close": "Luk"
 }

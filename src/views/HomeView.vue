@@ -14,10 +14,11 @@
 
 <style scoped>
 .welcome-sign {
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -145%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,9 +28,9 @@
   height: -webkit-fill-available;
   height: fill-available; /* For Firefox */
   height: 100%; /* Fallback for other browsers */
-  background-image: url("../assets/images/trolltunga2.jpg");
+  background-image: url("../assets/images/trolltunga3.jpg");
   background-size: cover;
-  background-position: top left;
+  background-position: top center;
   position: relative;
 }
 .welcome-background-cover {
@@ -50,11 +51,11 @@
 .wedding-dates {
   font-family: "Cinzel", serif;
   font-size: 1rem;
-  margin-top: -40px;
+  margin-top: -15px;
 }
 .wedding-names {
   font-family: "southern";
-  font-size: 4rem;
+  font-size: 2.6rem;
 }
 @media screen and (max-width: 375px) {
   .wedding-title {
@@ -77,7 +78,7 @@
 @media screen and (min-width: 769px) {
   .welcome-sign {
     position: absolute;
-
+    transform: translate(-50%, -70%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,6 +86,7 @@
   }
   .welcome-background {
     position: relative;
+    background-position: top center;
   }
   .welcome-background-cover {
     background: rgba(36, 36, 36, 0.35);

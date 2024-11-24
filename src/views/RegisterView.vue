@@ -63,37 +63,89 @@
             <div class="information">
               <font-awesome-icon
                 :icon="['fas', 'circle-info']"
-                @click="showPopup()"
+                @click="showPopup('stayingOver')"
               />
             </div>
           </label>
           <div class="radio">
             <input
               type="radio"
-              id="sleeping"
-              value="true"
+              id="staying-fri-sun"
+              value="friday-sunday"
               v-model="guest.sleeping"
-              required
             />
-            <label class="yesno" for="sleeping-yes">{{
-              $t("common.yes")
+            <label class="yesno" for="staying-fri-sun">{{
+              $t("common.friday-sunday")
+            }}</label>
+
+            <input
+              type="radio"
+              id="staying-sat-sun"
+              value="saturday-sunday"
+              v-model="guest.sleeping"
+            />
+            <label class="yesno" for="staying-sat-sun">{{
+              $t("common.saturday-sunday")
             }}</label>
             <input
               type="radio"
-              id="sleeping"
-              value="false"
+              id="staying-no"
+              value="no"
               v-model="guest.sleeping"
+              required
             />
-            <label class="yesno" for="sleeping-no">{{ $t("common.no") }}</label>
+            <label class="yesno" for="staying-no">{{ $t("common.no") }}</label>
           </div>
         </div>
         <Popup
-          :visible="isPopupVisible"
-          @update:visible="isPopupVisible = $event"
+          :visible="popups.stayingOver"
+          @update:visible="(val) => (popups.stayingOver = val)"
         >
           <div class="">
             <h3>{{ $t("common.staying-over") }}</h3>
             <p>{{ $t("common.staying-over-info") }}</p>
+          </div>
+        </Popup>
+
+        <div class="input-div">
+          <label>
+            {{ $t("common.breakfast") }}
+            <div class="information">
+              <font-awesome-icon
+                :icon="['fas', 'circle-info']"
+                @click="showPopup('breakfast')"
+              />
+            </div>
+          </label>
+          <div class="radio">
+            <input
+              type="radio"
+              id="breakfast-yes"
+              value="true"
+              v-model="guest.breakfast"
+              required
+            />
+            <label class="yesno" for="breakfast-yes">{{
+              $t("common.yes")
+            }}</label>
+            <input
+              type="radio"
+              id="breakfast-no"
+              value="false"
+              v-model="guest.breakfast"
+            />
+            <label class="yesno" for="breakfast-no">{{
+              $t("common.no")
+            }}</label>
+          </div>
+        </div>
+        <Popup
+          :visible="popups.breakfast"
+          @update:visible="(val) => (popups.breakfast = val)"
+        >
+          <div class="">
+            <h3>{{ $t("common.breakfast") }}</h3>
+            <p>{{ $t("common.breakfast-info") }}</p>
           </div>
         </Popup>
 
@@ -133,6 +185,25 @@
         <button type="submit">{{ $t("common.submit") }}</button>
       </form>
     </div>
+    <Popup
+      :visible="successPopupVisible"
+      @update:visible="(val) => (successPopupVisible = val)"
+    >
+      <div class="success-message">
+        <h3>{{ $t("common.success-title") }}</h3>
+        <p>{{ $t("common.success-message") }}</p>
+        <button
+          @click="
+            () => {
+              successPopupVisible = false;
+              router.push({ path: '/information' });
+            }
+          "
+        >
+          {{ $t("common.close") }}
+        </button>
+      </div>
+    </Popup>
   </div>
 </template>
 
@@ -146,23 +217,30 @@ import Popup from "../components/Popup.vue";
 import router from "../router";
 
 library.add(faCircleInfo);
-
+const successPopupVisible = ref(false);
 const guest = ref({
   name: "",
   email: "",
   attending: "true",
   allergies: "",
   sleeping: "false",
+  breakfast: "false",
   song1: "",
   song2: "",
   song3: "",
 });
 
-const isPopupVisible = ref(false);
-const popupMessage = ref("");
+// Manage visibility of each popup
+const popups = ref({
+  stayingOver: false,
+  breakfast: false,
+});
 
-const showPopup = () => {
-  isPopupVisible.value = true;
+const showPopup = (key) => {
+  Object.keys(popups.value).forEach((popupKey) => {
+    popups.value[popupKey] = false; // Close all other popups
+  });
+  popups.value[key] = true; // Show the requested popup
 };
 
 const handleSubmit = async () => {
@@ -173,6 +251,7 @@ const handleSubmit = async () => {
       attending: guest.value.attending,
       allergies: guest.value.allergies,
       sleeping: guest.value.sleeping,
+      breakfast: guest.value.breakfast,
       song1: guest.value.song1,
       song2: guest.value.song2,
       song3: guest.value.song3,
@@ -190,15 +269,14 @@ const handleSubmit = async () => {
       attending: "true",
       allergies: "",
       sleeping: "false",
+      breakfast: "false",
       song1: "",
       song2: "",
       song3: "",
     };
 
-    router.push({
-      path: "/success",
-      query: { message: "Registration successful!" },
-    });
+    // Show success popup
+    successPopupVisible.value = true;
   } catch (err) {
     console.error("Unexpected error:", err);
     alert("An unexpected error occurred. Please try again.");
@@ -271,6 +349,7 @@ button {
 }
 .yesno {
   font-size: 1rem;
+  flex-direction: column;
 }
 
 button:hover {

@@ -12,7 +12,7 @@
   "group": "Group",
   "timeline": "Timeline",
   "ceremony": "Ceremony",
-  "photos-and-cocktails": "Photos & Cocktails",
+  "photos-and-cocktails": "Drinks & Canapés",
   "dinner": "Dinner",
   "dance-floor": "Dance floor opens",
   "party": "Party",
@@ -21,6 +21,11 @@
   "accomodation": "Accomodation",
   "accomodation-info": "If youd like to extend the celebration and stay overnight at the venue between Saturday and Sunday, were pleased to offer some sleeping arrangement, there will be 27 sleeping spots in double beds and additional arrangements can be made with air matresses for those that are comfortable to sleep on them in the communal areas in the accomodation halls.",
   "accomodation-info2": "Accomodation will be priced at 370DKK per person, please fill in this is the RSVP if you wish to stay overnight.",
+  "accomodation-info3": "Breakfast can be purchased for 130 DKK per person. Please indicate this in your RSVP if you wish to add breakfast.",
+  "friday-sunday": "Fri - Sun",
+  "saturday-sunday": "Sat - Sun",
+  "breakfast": "Breakfast",
+  "breakfast-info": "Breakfast can be added for 130DKK per person",
   "children": "Children",
   "children-info": "Children are welcome at the ceremony but we kindly ask that you make arrangements for them afterwards, children whom are too young to have a babysitter is obviously exempt from this.",
   "welcome": "Welcome",
@@ -57,5 +62,8 @@
   "yourEmail": "Your Email",
   "giftingAmount": "How many would you like to gift?",
   "wishedFor": "desired",
-  "cantBeFound": "That page can't be found!"
+  "cantBeFound": "That page can't be found!",
+  "success-title": "Registration Successful!",
+  "success-message": "Thank you for registering. We look forward to seeing you!",
+  "close": "Close"
 }
