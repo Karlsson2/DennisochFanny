@@ -54,6 +54,7 @@ const apiKey = import.meta.env.VITE_MAPBOX_KEY;
         <p>
           {{ $t("common.accomodation-info2") }}
         </p>
+        <p>{{ $t("common.accomodation-info3") }}</p>
       </div>
       <div class="information-container-100">
         <h3>{{ $t("common.children") }}</h3>
