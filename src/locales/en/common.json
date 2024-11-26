@@ -67,5 +67,7 @@
   "success-message": "Thank you for registering. We look forward to seeing you!",
   "close": "Close",
   "dresscode": "Dresscode",
-  "dresscode-info": "The dresscode for the wedding is semi-formal. We want you to feel comfortable and enjoy the day, so feel free to wear something that makes you feel good! The ceremony will be held outdoors so we recommend that you check the weather forecast and dress accordingly."
+  "dresscode-info": "The dresscode for the wedding is semi-formal. We want you to feel comfortable and enjoy the day, so feel free to wear something that makes you feel good! The ceremony will be held outdoors so we recommend that you check the weather forecast and dress accordingly.",
+  "arrival": "Arrival",
+  "arrival-info": "If you are staying overnight at the venue, check-in will be available from 14:00 on the day of the wedding. If you are not staying overnight, the ceremony will begin at 15:00. We recommend that you arrive at least 30 minutes before the ceremony starts."
 }

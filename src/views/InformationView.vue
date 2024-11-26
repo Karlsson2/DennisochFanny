@@ -1,7 +1,5 @@
 <script setup>
 import MapBoxMap from "../components/MapBoxMap.vue";
-
-const center = { lat: 57.40381284095866, lng: 9.771508127390755 };
 const mapLink =
   "https://www.google.com/maps/place/Lykkesholmgaard,+Lyngby+Torp+84,+9480+L%C3%B8kken,+Denmark/@57.403853,9.772262,15z/data=!4m6!3m5!1s0x4648db46b4d6966b:0x448dc483ec560c2c!8m2!3d57.403784!4d9.7715329!16s%2Fg%2F11f3bl38fb?hl=en-GB&gl=US";
 const apiKey = import.meta.env.VITE_MAPBOX_KEY;
@@ -46,6 +44,18 @@ const apiKey = import.meta.env.VITE_MAPBOX_KEY;
         </p>
       </div>
       <div class="information-container-100">
+        <h3>{{ $t("common.arrival") }}</h3>
+        <p>{{ $t("common.arrival-info") }}</p>
+        <h3>{{ $t("common.children") }}</h3>
+        <p>
+          {{ $t("common.children-info") }}
+        </p>
+        <h3>{{ $t("common.dresscode") }}</h3>
+        <p>
+          {{ $t("common.dresscode-info") }}
+        </p>
+      </div>
+      <div class="information-container-100">
         <h3>{{ $t("common.accomodation") }}</h3>
         <p>
           {{ $t("common.accomodation-info") }}
@@ -54,18 +64,6 @@ const apiKey = import.meta.env.VITE_MAPBOX_KEY;
           {{ $t("common.accomodation-info2") }}
         </p>
         <p>{{ $t("common.accomodation-info3") }}</p>
-      </div>
-      <div class="information-container-100">
-        <h3>{{ $t("common.children") }}</h3>
-        <p>
-          {{ $t("common.children-info") }}
-        </p>
-      </div>
-      <div class="information-container-100">
-        <h3>{{ $t("common.dresscode") }}</h3>
-        <p>
-          {{ $t("common.dresscode-info") }}
-        </p>
       </div>
     </div>
   </div>

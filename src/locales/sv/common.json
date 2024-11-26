@@ -67,5 +67,7 @@
   "success-message": "Tack för din registrering. Vi ser fram emot att träffa dig!",
   "close": "Stäng",
   "dresscode": "Klädkod",
-  "dresscode-info": "Klädkoden är festlig. Vi vill att ni har något ni känner er bekväma i!  Vi rekommenderar att ni tar en titt på väderprognosen och klär er därefter då vi planerar ceremonien utomhus."
+  "dresscode-info": "Klädkoden är festlig. Vi vill att ni har något ni känner er bekväma i!  Vi rekommenderar att ni tar en titt på väderprognosen och klär er därefter då vi planerar ceremonien utomhus.",
+  "arrival": "Ankomst",
+  "arrival-info": "Om ni skall sova över till Söndagen ber vi er att komma till lykkesholmgaard senast 14:00 på lördagen, annars ber vi er att komma ca 14.30 för att ta er plats inför ceremonin. Ceremonin börjar kl 15:00."
 }
