@@ -62,7 +62,7 @@ const apiKey = import.meta.env.VITE_MAPBOX_KEY;
         </p>
       </div>
       <div class="information-container-100">
-        <h3>{{ $("common.dresscode") }}</h3>
+        <h3>{{ $t("common.dresscode") }}</h3>
         <p>
           {{ $t("common.dresscode-info") }}
         </p>
