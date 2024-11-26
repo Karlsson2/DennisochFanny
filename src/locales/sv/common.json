@@ -65,5 +65,7 @@
   "cantBeFound": "Sidan kan inte hittas!",
   "success-title": "Registreringen lyckades!",
   "success-message": "Tack för din registrering. Vi ser fram emot att träffa dig!",
-  "close": "Stäng"
+  "close": "Stäng",
+  "dresscode": "Klädkod",
+  "dresscode-info": "Klädkoden är festlig. Vi vill att ni har något ni känner er bekväma i!  Vi rekommenderar att ni tar en titt på väderprognosen och klär er därefter då vi planerar ceremonien utomhus."
 }

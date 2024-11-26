@@ -65,5 +65,7 @@
   "cantBeFound": "Den side kan ikke findes!",
   "success-title": "Registreringen lykkedes!",
   "success-message": "Tak for din registrering. Vi glæder os til at se dig!",
-  "close": "Luk"
+  "close": "Luk",
+  "dresscode": "Dresscode",
+  "dresscode-info": "Dresscode er Festligt, vi vil gerne at i klæder jer i noget i føler jer godt. Vi rekomenderer at i tager hensyn til vejret, da ceremonien vil være udendørs."
 }

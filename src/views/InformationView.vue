@@ -1,5 +1,4 @@
 <script setup>
-import { GoogleMap, CustomMarker } from "vue3-google-map";
 import MapBoxMap from "../components/MapBoxMap.vue";
 
 const center = { lat: 57.40381284095866, lng: 9.771508127390755 };
@@ -60,6 +59,12 @@ const apiKey = import.meta.env.VITE_MAPBOX_KEY;
         <h3>{{ $t("common.children") }}</h3>
         <p>
           {{ $t("common.children-info") }}
+        </p>
+      </div>
+      <div class="information-container-100">
+        <h3>{{ $("common.dresscode") }}</h3>
+        <p>
+          {{ $t("common.dresscode-info") }}
         </p>
       </div>
     </div>
