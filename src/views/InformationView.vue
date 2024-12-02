@@ -1,73 +1,54 @@
+<template>
+  <div class="page-container">
+    <h2>Information</h2>
+    <div class="information">
+      <InformationContainer title="Timeline" width="100">
+        <div class="timeline">
+          <TimeLine time="15.00" :description="$t('common.ceremony')" />
+          <TimeLine
+            time="15.30"
+            :description="$t('common.photos-and-cocktails')"
+          />
+          <TimeLine time="18.00" :description="$t('common.dinner')" />
+          <TimeLine time="22.30" :description="$t('common.dance-floor')" />
+          <TimeLine time="22.30+" :description="$t('common.party')" />
+        </div>
+      </InformationContainer>
+
+      <InformationContainer :title="$t('common.location')" width="100">
+        <MapBoxMap :access-token="apiKey" :center="[9.772262, 57.403853]" />
+        <p>
+          {{ $t("common.location-info") }}
+          <a :href="mapLink">Lykkesholmgaard</a>, Lyngby Torp 84, 9480 Løkken
+        </p>
+      </InformationContainer>
+
+      <InformationContainer :title="$t('common.arrival')" width="100">
+        <p>{{ $t("common.arrival-info") }}</p>
+        <h3>{{ $t("common.children") }}</h3>
+        <p>{{ $t("common.children-info") }}</p>
+        <h3>{{ $t("common.dresscode") }}</h3>
+        <p>{{ $t("common.dresscode-info") }}</p>
+      </InformationContainer>
+
+      <InformationContainer :title="$t('common.accomodation')" width="100">
+        <p>{{ $t("common.accomodation-info") }}</p>
+        <p>{{ $t("common.accomodation-info2") }}</p>
+        <p>{{ $t("common.accomodation-info3") }}</p>
+      </InformationContainer>
+    </div>
+  </div>
+</template>
+
 <script setup>
+import TimeLine from "../components/TimeLine.vue";
+import InformationContainer from "../components/InformationContainer.vue";
 import MapBoxMap from "../components/MapBoxMap.vue";
 const mapLink =
   "https://www.google.com/maps/place/Lykkesholmgaard,+Lyngby+Torp+84,+9480+L%C3%B8kken,+Denmark/@57.403853,9.772262,15z/data=!4m6!3m5!1s0x4648db46b4d6966b:0x448dc483ec560c2c!8m2!3d57.403784!4d9.7715329!16s%2Fg%2F11f3bl38fb?hl=en-GB&gl=US";
 const apiKey = import.meta.env.VITE_MAPBOX_KEY;
 </script>
 
-<template>
-  <div class="page-container">
-    <h2>Information</h2>
-    <div class="information">
-      <div class="information-container-100">
-        <h3 style="margin-bottom: 54px">Timeline</h3>
-        <div class="timeline">
-          <div class="timeline-component">
-            <div class="time">15.00</div>
-            <p>{{ $t("common.ceremony") }}</p>
-          </div>
-          <div class="timeline-component">
-            <div class="time">15.30</div>
-            <p>{{ $t("common.photos-and-cocktails") }}</p>
-          </div>
-          <div class="timeline-component">
-            <div class="time">18.00</div>
-            <p>{{ $t("common.dinner") }}</p>
-          </div>
-          <div class="timeline-component">
-            <div class="time">22.30</div>
-            <p>{{ $t("common.dance-floor") }}</p>
-          </div>
-          <div class="timeline-component">
-            <div class="time">22.30+</div>
-            <p>{{ $t("common.party") }}</p>
-          </div>
-        </div>
-      </div>
-      <div class="information-container-100">
-        <h3>{{ $t("common.location") }}</h3>
-        <MapBoxMap :access-token="apiKey" :center="[9.772262, 57.403853]" />
-        <p>
-          {{ $t("common.location-info") }}
-
-          <a :href="mapLink">Lykkesholmgaard</a>, Lyngby Torp 84, 9480 Løkken
-        </p>
-      </div>
-      <div class="information-container-100">
-        <h3>{{ $t("common.arrival") }}</h3>
-        <p>{{ $t("common.arrival-info") }}</p>
-        <h3>{{ $t("common.children") }}</h3>
-        <p>
-          {{ $t("common.children-info") }}
-        </p>
-        <h3>{{ $t("common.dresscode") }}</h3>
-        <p>
-          {{ $t("common.dresscode-info") }}
-        </p>
-      </div>
-      <div class="information-container-100">
-        <h3>{{ $t("common.accomodation") }}</h3>
-        <p>
-          {{ $t("common.accomodation-info") }}
-        </p>
-        <p>
-          {{ $t("common.accomodation-info2") }}
-        </p>
-        <p>{{ $t("common.accomodation-info3") }}</p>
-      </div>
-    </div>
-  </div>
-</template>
 <style scoped>
 .information {
   width: 80%;

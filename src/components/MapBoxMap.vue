@@ -49,10 +49,10 @@ export default {
     const markerElement = document.createElement("div");
     markerElement.className = "custom-marker";
     markerElement.innerHTML = `
-        <a href="${this.mapLink}">
-          <img src="${weddingPin}" width="60" height="60" style="margin-top: 8px" />
-        </a>
-      `;
+          <a href="${this.mapLink}">
+            <img src="${weddingPin}" width="60" height="60" style="margin-top: 8px" />
+          </a>
+        `;
 
     new mapboxgl.Marker(markerElement).setLngLat(this.center).addTo(this.map);
   },
