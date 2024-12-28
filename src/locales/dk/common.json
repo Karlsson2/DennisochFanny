@@ -67,7 +67,10 @@
   "success-message": "Tak for din registrering. Vi glæder os til at se dig!",
   "close": "Luk",
   "dresscode": "Dresscode",
-  "dresscode-info": "Dresscode er Festligt, vi vil gerne at i klæder jer i noget i føler jer godt. Vi rekomenderer at i tager hensyn til vejret, da ceremonien vil være udendørs.",
+  "dresscode-info": "Dresscode er festlig. Vi vil gerne have, at I klæder jer i noget, I føler jer tilpas i. Vi anbefaler, at I tager hensyn til vejret, da ceremonien vil foregå udendørs.",
   "arrival": "Ankomst",
-  "arrival-info": "Hvis i planerer at sova over på stedet, så er i velkomne til at ankomme fra kl 14:00 på lørdag. Ceremonien started kl 15:00 og vi anbefaler at i ankommer mindst 30 minutter før ceremonien starter."
+  "arrival-info": "Hvis i planerer at sova over på stedet, så er i velkomne til at ankomme fra kl 14:00 på lørdag. Ceremonien started kl 15:00 og vi anbefaler at i ankommer mindst 30 minutter før ceremonien starter.",
+  "welcome-message": "OBS! Der er sket en fejl i invitationerne, og vores toastmasters email er: daniel.korsholt@gmail.com.",
+  "toastmaster": "Toastmaster",
+  "toastmaster-info": "Vores toastmaster for aftenen er Daniel Korsholt. Hvis du har spørgsmål eller bekymringer, så tøv ikke med at kontakte ham på daniel.korsholt@gmail.com. Bemærk, at der var en trykfejl i invitationerne, og hans emailadresse er forkert der."
 }

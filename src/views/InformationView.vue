@@ -29,6 +29,8 @@
         <p>{{ $t("common.children-info") }}</p>
         <h3>{{ $t("common.dresscode") }}</h3>
         <p>{{ $t("common.dresscode-info") }}</p>
+        <h3>{{ $t("common.toastmaster") }}</h3>
+        <p>{{ $t("common.toastmaster-info") }}</p>
       </InformationContainer>
 
       <InformationContainer :title="$t('common.accomodation')" width="100">

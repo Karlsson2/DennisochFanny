@@ -4,10 +4,18 @@
   <div class="welcome-background">
     <div class="welcome-background-cover"></div>
     <div class="welcome-sign">
-      <div class="wedding-title">{{ $t("common.welcome") }}</div>
-      <div class="wedding-subtitle">{{ $t("common.welcome-subtitle") }}</div>
-      <div class="wedding-names">{{ $t("common.welcome-names") }}</div>
-      <div class="wedding-dates">{{ $t("common.welcome-dates") }}</div>
+      <div class="container-container">
+        <div class="text-container">
+          <div class="wedding-title">{{ $t("common.welcome") }}</div>
+          <div class="wedding-subtitle">
+            {{ $t("common.welcome-subtitle") }}
+          </div>
+          <div class="wedding-names">{{ $t("common.welcome-names") }}</div>
+          <div class="wedding-dates">{{ $t("common.welcome-dates") }}</div>
+        </div>
+
+        <div class="message">{{ $t("common.welcome-message") }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -18,11 +26,30 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -145%);
+  transform: translate(-50%, -55%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
+}
+.message {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  background: #b3bfb8;
+  padding: 10px;
+  height: fit-content;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.container-container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  position: relative;
 }
 .welcome-background {
   height: -webkit-fill-available;
@@ -107,6 +134,16 @@
   }
   .wedding-names {
     font-size: 5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .message {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -40%);
+    left: calc(100% + 48px);
+    max-width: 300px;
   }
 }
 </style>

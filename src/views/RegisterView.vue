@@ -182,7 +182,9 @@
             placeholder="Baby Shark - Baby Shark"
           />
         </div>
-        <button type="submit">{{ $t("common.submit") }}</button>
+        <button class="submit-button" type="submit">
+          {{ $t("common.submit") }}
+        </button>
       </form>
     </div>
     <Popup
@@ -362,5 +364,10 @@ p {
 .information:hover {
   cursor: pointer;
   color: #828b86;
+}
+
+.submit-button {
+  font-size: 1.2rem;
+  font-family: "Cinzel";
 }
 </style>
