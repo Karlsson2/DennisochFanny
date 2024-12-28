@@ -5,7 +5,6 @@
     <div class="welcome-background-cover"></div>
     <div class="welcome-sign">
       <div class="container-container">
-        <div class="test">test</div>
         <div class="text-container">
           <div class="wedding-title">{{ $t("common.welcome") }}</div>
           <div class="wedding-subtitle">
